@@ -1,16 +1,11 @@
 import streamlit as st
-from streamlit_pages.streamlit_pages import MultiPage
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from functions.regression import autoregression
-st.title("Space.ai")
-st.header("AutoML")
 
-
-## Tabular Data Type function
-def tabular():
-    st.subheader("Tabular")
-    st.header('Upload Dataset')
+def app():
+    st.header("Tabular")
+    st.subheader('Upload Dataset')
 
     # File uploader
     data_file = st.file_uploader("Upload CSV", type=['csv'])
@@ -64,30 +59,3 @@ def tabular():
         ## TODO Featuring Engineering, Data Cleaning
         ## TODO AutoML
 
-
-## Image Data Type function
-def image():
-    st.subheader("Image")
-    st.header('Upload Dataset')
-    data_file = st.file_uploader("Upload CSV", type=['csv'])
-
-## Text Data Type function
-def text():
-    st.subheader("Text")
-    st.header('Upload Dataset')
-    data_file = st.file_uploader("Upload CSV", type=['csv'])
-
-## Timeseries Data Type function
-def timeseries():
-    st.subheader("Timeseries")
-    st.header('Upload Dataset')
-    data_file = st.file_uploader("Upload CSV", type=['csv'])
-
-# call app class object
-app = MultiPage()
-# Add pages
-app.add_page("Tabular",tabular)
-app.add_page("Image",image)
-app.add_page("Text",text)
-app.add_page("Timeseries",timeseries)
-app.run()
