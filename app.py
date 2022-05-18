@@ -8,8 +8,9 @@ from pages import tabular, image, text, timeseries
 
 app = MultiPage()
 
-st.title("Space.ai")
-st.header("AutoML")
+
+st.title("Space.ai autoML")
+
 
 app.add_page("Tabular", tabular.app)
 app.add_page("Image", image.app)
